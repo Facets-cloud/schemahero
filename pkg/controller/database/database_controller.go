@@ -130,7 +130,6 @@ func (r *ReconcileDatabase) Reconcile(ctx context.Context, request reconcile.Req
 					Annotations: vaultAnnotations,
 				},
 				Spec: corev1.PodSpec{
-					NodeSelector: databaseInstance.Spec.SchemaHero.NodeSelector,
 					Tolerations:  tolerations,
 					Affinity: &corev1.Affinity{
 						NodeAffinity: &corev1.NodeAffinity{
